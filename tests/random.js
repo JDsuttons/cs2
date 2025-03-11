@@ -3,12 +3,14 @@ const fs = require('fs');
 const path = require("path");
 const directory = path.join(__dirname,'\\outputs');
  
-const data = fs.readFileSync('\\demos\\natus-vincere-vs-apeks-m3-mirage-p2.dem');
+const data = fs.readFileSync("\\Work\\repos\\cs2\\demos\\complexity-vs-vitality-m1-inferno.dem");
 let buf = Buffer.from(data)
-let out = parseEvent(buf, "player_death", ["X", "Y"], ["total_rounds_played"])
+let out = parseEvent(data, "player_death", ["total_rounds_played"])
 
-fs.writeFileSync(directory+"/newcsvtest.csv",'out');
+let header = buf.join(","); 
+let content = out.map(out => 
+  Object.values(out).join(",")
+);
+const csvContent = header + "\n" + content.join("\n")
 
-console.log(out)
-
-
+fs.writeFileSync(directory+"/random.csv",csvContent);
