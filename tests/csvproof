@@ -1,0 +1,26 @@
+var {parseTicks} = require('@laihoe/demoparser2');
+const fs = require('fs');
+
+// Update the tick parsing call to request all available player fields per frame.
+let filtered_ticks = parseSpecificPlayerTicks("demo3.dem", playerProperties);
+//console.log(parseSpecificPlayerTicks);
+console.log(filtered_ticks);
+
+// New: Function to export all ticks data to a CSV file for Excel analysis.
+function exportTicksToCSV(ticks) {
+    if (!ticks.length) {
+        console.log("No ticks data to export.");
+        return;
+    }
+    // Get CSV header from tick keys.
+    const header = Object.keys(ticks[0]).join(",");
+    const rows = ticks.map(tick => 
+        Object.values(tick).join(",")
+    );
+    const csvContent = header + "\n" + rows.join("\n");
+    
+    fs.writeFileSync("ticks_data_hnsbym.csv", csvContent);
+    console.log("Exported ticks data to ticks_data.csv");
+}
+
+exportTicksToCSV(filtered_ticks);
