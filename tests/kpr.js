@@ -26,4 +26,11 @@ for (let round = 0; round <= maxRound; round++){
     });
     console.log("round:", round)
     console.log(killsPerPlayer)
+    console.log(filteredKills)
 }
+
+
+
+
+
+
