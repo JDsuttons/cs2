@@ -22,4 +22,4 @@ const csvContent = header + "\n" + content.join("\n")
 
 fs.writeFileSync(directory+"/abc.csv",csvContent);
 
-console.log(kills)
+console.log(csvContent)
