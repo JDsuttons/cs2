@@ -9,7 +9,8 @@ const data = fs.readFileSync("\\Work\\repos\\cs2\\demos\\complexity-vs-vitality-
 
 let kills = parseEvent(data, "round_end")
 
-let header = parseEvent(data, "round_end")
+
+let header = ["event_name","reason","round","tick","winner" ]
 
 let content = kills.map(kills => 
   Object.values(kills).join(",")
