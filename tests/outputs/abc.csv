@@ -1,4 +1,4 @@
-assistedflash,assister_name,assister_steamid,assister_name,attackerblind,distance,dmg_armor,dmg_health,dominated,event_name,headshot,hitgroup,noreplay,noscope,penetrated,revenge,thrusmoke,tick,user_name,user_steamid,weapon,weapon_fauxitemid,weapon_itemid,weapon_originalowner_xuid,wipe
+assistedflash,assister_name,assister_steamid,attacker_name,attacker_steamid,attackerblind,distance,dmg_armor,dmg_health,dominated,event_name,headshot,hitgroup,noreplay,noscope,penetrated,revenge,thrusmoke,tick,user_name,user_steamid,weapon,weapon_fauxitemid,weapon_itemid,weapon_originalowner_xuid,wipe
 false,,,hallzerk,76561198060367310,false,11.75104808807373,0,128,0,player_death,true,head,false,false,0,0,false,4378,flameZ,76561197978835160,hkp2000,17293822569116532768,35743658388,,0
 false,,,hallzerk,76561198060367310,false,13.195716857910156,0,127,0,player_death,true,head,false,false,0,0,false,4654,mezii,76561197973140692,hkp2000,17293822569116532768,35743658388,,0
 false,,,floppy,76561198306519263,false,16.124767303466797,0,124,0,player_death,true,head,false,false,0,0,false,4692,apEX,76561197989744167,usp_silencer,17293822569145499709,25606338160,,0
