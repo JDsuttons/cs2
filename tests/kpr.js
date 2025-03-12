@@ -24,8 +24,7 @@ for (let round = 0; round <= maxRound; round++){
         const kills = killsPerPlayer[attackerName] || 0;
         killsPerPlayer[attackerName] = kills + 1;
     });
-    console.log("round:", round)
-    console.log(killsPerPlayer)
+
     console.log(filteredKills)
 }
 

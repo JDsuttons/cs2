@@ -7,10 +7,7 @@ const data = fs.readFileSync("\\Work\\repos\\cs2\\demos\\complexity-vs-vitality-
 let buf = Buffer.from(data)
 let out = parseEvent(data, "player_death", ["total_rounds_played"])
 
-let header = buf.join(","); 
-let content = out.map(out => 
-  Object.values(out).join(",")
-);
-const csvContent = header + "\n" + content.join("\n")
 
-fs.writeFileSync(directory+"/random.csv",csvContent);
+//fs.writeFileSync(directory+"/random.csv",csvContent);
+
+console.log(out)

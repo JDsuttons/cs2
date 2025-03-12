@@ -16,5 +16,6 @@ let content = scoreboard.map(scoreboard =>
 );
 const csvContent = header + "\n" + content.join("\n")
 
-fs.writeFileSync(directory+"/scoreboard.csv",csvContent);
+fs.writeFileSync(directory+"/newcsvtest.csv",csvContent);
 console.log(scoreboard)
+
