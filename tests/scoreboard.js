@@ -1,7 +1,7 @@
 const fs = require("fs")
 const path = require("path");
 const directory = path.join(__dirname,'\\outputs');
-const { demoFile } =require ("../env.js")
+const { demoFile, outputFileName } =require ("../env.js")
 
 var {parseEvent, parseTicks} = require('@laihoe/demoparser2');
 
@@ -17,6 +17,6 @@ let content = scoreboard.map(scoreboard =>
 );
 const csvContent = header + "\n" + content.join("\n")
 
-fs.writeFileSync(directory+"/newcsvtest.csv",csvContent);
-console.log(scoreboard)
+fs.writeFileSync(`${outputFileName}`,csvContent);
+console.log(directory)
 
