@@ -2,7 +2,7 @@ const fs = require("fs")
 const path = require("path");
 const directory = path.join(__dirname,'\\outputs');
 const { Helpers } = require('\\Work\\repos\\cs2\\helpers')
-const { demoFile } =require ("../env.js")
+const { demoFile,pdFileName } =require ("../env.js")
 
 var {parseEvent} = require('@laihoe/demoparser2');
 const { kill } = require("process");
@@ -10,7 +10,6 @@ const { kill } = require("process");
 const data = fs.readFileSync(demoFile)
 
 let kills = parseEvent(data, "player_death")
-
 
 var helpers = new Helpers()
 let header = helpers.playerDeathsHeader()
@@ -21,6 +20,6 @@ let content = kills.map(kills =>
 
 const csvContent = header + "\n" + content.join("\n")
 
-fs.writeFileSync(directory+"/npmrun.csv",csvContent);
+fs.writeFileSync(`${pdFileName}`,csvContent);
 
 console.log(kills)
