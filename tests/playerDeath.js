@@ -2,11 +2,12 @@ const fs = require("fs")
 const path = require("path");
 const directory = path.join(__dirname,'\\outputs');
 const { Helpers } = require('\\Work\\repos\\cs2\\helpers')
+const { demoFile } =require ("../env.js")
 
 var {parseEvent} = require('@laihoe/demoparser2');
 const { kill } = require("process");
 
-const data = fs.readFileSync("\\Work\\repos\\cs2\\demos\\complexity-vs-vitality-m1-inferno.dem")
+const data = fs.readFileSync(demoFile)
 
 let kills = parseEvent(data, "player_death")
 
@@ -20,6 +21,6 @@ let content = kills.map(kills =>
 
 const csvContent = header + "\n" + content.join("\n")
 
-fs.writeFileSync(directory+"/complexity-vs-vitality-m1-inferno.csv",csvContent);
+fs.writeFileSync(directory+"/npmrun.csv",csvContent);
 
 console.log(kills)
