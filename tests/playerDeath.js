@@ -9,7 +9,7 @@ const { kill } = require("process");
 
 const data = fs.readFileSync(demoFile)
 
-let kills = parseEvent(data, "player_death")
+let kills = parseEvent(data, "player_death", ["active_weapon_name"])
 
 var helpers = new Helpers()
 let header = helpers.playerDeathsHeader()
@@ -22,4 +22,4 @@ const csvContent = header + "\n" + content.join("\n")
 
 fs.writeFileSync(`${pdFileName}`,csvContent);
 
-console.log(csvContent)
+console.log(kills)
