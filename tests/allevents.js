@@ -7,4 +7,6 @@ const data = fs.readFileSync(demoFile)
 // If you just want the names of all events then you can use this:
 let eventNames = listGameEvents(data)
 
-console.log(eventNames)
+
+let allEvents = parseEvents(data, ["all"])
+console.log(allEvents)

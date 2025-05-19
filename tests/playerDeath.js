@@ -2,14 +2,14 @@ const fs = require("fs")
 const path = require("path");
 const directory = path.join(__dirname,'\\outputs');
 const { Helpers } = require('\\Work\\repos\\cs2\\helpers')
-const { demoFile,pdFileName } =require ("../env.js")
+const { demoFile,pdFileName,mapName,mapHeader, } =require ("../env.js")
 
 var {parseEvent} = require('@laihoe/demoparser2');
 const { kill } = require("process");
 
 const data = fs.readFileSync(demoFile)
 
-let kills = parseEvent(data, "player_death", ["active_weapon_name"])
+let kills = parseEvent(data, "player_death", ["active_weapon_name", "is_warmup_period", "total_rounds_played"])
 
 var helpers = new Helpers()
 let header = helpers.playerDeathsHeader()
@@ -18,8 +18,8 @@ let content = kills.map(kills =>
   Object.values(kills).join(",")
 );
 
-const csvContent = header + "\n" + content.join("\n")
+const csvContent = header + "\n" + content.join("\n")  
 
 fs.writeFileSync(`${pdFileName}`,csvContent);
 
-console.log(kills)
+console.log(csvContent)
